@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
+<div class="container">
         <h1>Coworking</h1>
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
     <div class="carousel-item active">
         {% load static %}
-      <img src="{% static 'img/annie-spratt-dWYU3i-mqEo-unsplash.jpg' %}" class="d-block w-100" alt="...">
+      <img src="{% static 'img/lycs-architecture-U2BI3GMnSSE-unsplash (1).jpg' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{% static 'img/linkedin-sales-solutions-VtKoSy_XzNU-unsplash.jpg' %}" class="d-block w-100" alt="...">
+      <img src="{% static 'img/rodeo-project-management-software-ONe-snuCaqQ-unsplash.jpg' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{% static 'img/shridhar-gupta-dZxQn4VEv2M-unsplash (1).jpg' %}" class="d-block w-100" alt="...">
+      <img src="{% static 'img/jason-goodman-nF0nQuqBsrI-unsplash.jpg' %}" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -28,7 +28,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for category in categories %}
             <div class="col">
-            <div class="card border-light mb-3" style="max-width: 20rem;">
+            <div class="card border-light mt-4 mb-3" style="max-width: 20rem;">
             <div class="card-header">{{ category.title }}</div>
             <div class="card-body">
                 <p class="card-text">{{ category.description }} </p>
@@ -36,9 +36,9 @@
                 </div>
             </div>
             </div>
-        {% endfor %}
+            {% endfor %}
         </div>
 
-    </div>
+</div>
 
 {% endblock %}
