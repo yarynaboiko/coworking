@@ -1,22 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container">
-        <h1 class="my-4">Зареєструватися</h1>
+        <h1>Увійти</h1>
         {% if messages %}
-
         {% for message in messages %}
             <div class="alert alert-secondary" role="alert">
                 {{ message }}
             </div>
         {% endfor %}
-
     {% endif %}
-    <form method="post" action="{% url 'register' %}">
+    <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_div }}
-        <button type="submit" class="btn btn-light my-3">Реєстрація</button>
+        <button type="submit" class="btn btn-light my-3">Увійти</button>
 
-        <a href="{% url 'login' %}" class="m-3 text-white">Увійти в профіль</a>
+        <a href="{% url 'register' %}" class="m-3 text-white">Створити профіль</a>
     </form>
     </div>
 
