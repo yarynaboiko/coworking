@@ -3,6 +3,24 @@
     <div class="container">
         <h1>Coworking</h1>
         {% include 'booking/search_room.html' %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for room in rooms %}
+            <div class="col">
+            <div class="card mt-4 mb-3" style="max-width: 20rem;">
+                <img src="{{ room.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> Кімната {{ room.title }} </h5>
+                <h6> місць: {{ room.capacity }} </h6>
+                <p class="card-text">{{ room.description }} </p>
+                <p class="card-text">{{ room.location }} </p>
+                <a class="btn btn-outline-light me-3" href="{% url 'book_room' room_id=room.id %}" role="button">Забронювати</a>
+                <span class="h6" >{{ room.price }} грн/год.</span>
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock %}
 

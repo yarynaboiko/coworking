@@ -23,6 +23,7 @@ class Room(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="ціна кімнати")
     location = models.CharField(max_length=255, verbose_name="локація кімнати")
 
+
     def __str__(self):
         return self.title
 
@@ -53,8 +54,8 @@ class Booking(models.Model):
         ("cancelled", "Скасовано бронювання"),
         ("archived", "Минуле бронювання"),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="користувач")
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="кімната")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings", verbose_name="користувач")
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="bookings", verbose_name="кімната")
     places = models.ManyToManyField(Place, related_name="bookings", verbose_name="місця")
     start_date = models.DateTimeField(verbose_name="дата початку")
     end_date = models.DateTimeField(verbose_name="кінцева дата")
